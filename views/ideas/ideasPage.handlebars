@@ -1,7 +1,8 @@
 {{#each ideas}}
-<div class="card card-body mb-2">
+<div class="card card-body mt-2 mb-2">
     <h4>{{title}}</h4>
     <p>{{details}}</p>
+    <a href="ideas/edit/{{id}}" class="btn btn-dark">Edit</a>
 </div>
     {{else}}
     <p>No ideas listed</p>

@@ -37,6 +37,18 @@ app.get('/ideas/add', (req, res) => {
     res.render('ideas/add');
 });
 
+// Edit idea form
+app.get('/ideas/edit/:id', (req, res) => {
+    Idea.findOne({
+        _id: req.params.id
+    })
+        .then(idea => {
+            res.render('ideas/edit', {
+                idea: idea
+            });
+        });
+});
+
 // Idea index page
 app.get('/ideas', (req, res) => {
     Idea.find({})
@@ -69,7 +81,7 @@ app.post('/ideas', (req, res) => {
         const newUser = {
             title: req.body.title,
             details: req.body.details
-        }
+        };
         new Idea(newUser)
             .save().then((ideas) => {
             res.redirect('/ideas');
