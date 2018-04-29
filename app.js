@@ -22,8 +22,11 @@ const users = require('./routes/users');
 // Passport config
 require('./config/passport')(passport);
 
+// Database config
+const db = require('./config/database');
+
 // Connect to mongoose
-mongoose.connect('mongodb://localhost/ideas-app-dev')
+mongoose.connect(db.mongoURI)
     .then(() => console.log('MongoDB connected'))
     .catch((err) => console.log(err));
 
