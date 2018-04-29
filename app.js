@@ -76,6 +76,8 @@ app.get('/about', (req, res) => {
 // Use routes
 app.use('/ideas',ideas);
 app.use('/users',users);
-app.listen(500, function () {
+
+const port = process.env.PORT || 5000
+app.listen(port, function () {
     console.log('App is listening');
 });

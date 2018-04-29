@@ -1,10 +1,10 @@
 {
-  "name": "Ideas App",
+  "name": "IdeasApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "An app to jolt down video ideas",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Mitesh",
   "license": "MIT",
