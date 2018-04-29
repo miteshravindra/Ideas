@@ -7,13 +7,9 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const passport = require('passport');
 const session = require('express-session');
-const favicon = require('serve-favicon');
 
 
 const app = express();
-
-// Favicon middleware
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // Load routes
 const ideas = require('./routes/ideas');
