@@ -1,16 +1,20 @@
 {{#each ideas}}
-<div class="card card-body mt-2 mb-2">
-    <h4>{{title}}</h4>
-    <p>{{details}}</p>
-    <a href="ideas/edit/{{id}}" class="btn btn-dark mb-2">
-        <i class="far fa-edit"></i> Edit</a>
-    <form action="/ideas/{{id}}?_method=DELETE" method="post">
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" value="DELETE" class="btn btn-danger btn-block">
-            <i class="fas fa-trash-alt"></i> DELETE
-        </button>
-    </form>
-</div>
-    {{else}}
+    <div class="card card-body mt-2 mb-2">
+        <h4>{{title}}</h4>
+        <div>
+            <p style="display: inline-block;">{{details}}</p>
+            <div style="display: inline-block;float:right;">
+                <a href="ideas/edit/{{id}}" class="btn btn-dark mb-1" style="align-content: right;">
+                    <i class="far fa-edit"></i> Edit</a>
+                <form action="/ideas/{{id}}?_method=DELETE" method="post" style="display:inline-block;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" value="DELETE" class="btn btn-danger btn-block">
+                        <i class="fas fa-trash-alt"></i> DELETE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{else}}
     <p>No ideas listed</p>
- {{/each}}
+{{/each}}

@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const passport = require('passport');
 const session = require('express-session');
+const favicon = require('serve-favicon');
 
 
 const app = express();
@@ -62,6 +63,10 @@ app.use(function(req,res,next){
    res.locals.user = req.user || null
    next();
 });
+
+// favicon middleware
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
+
 
 // Index Route
 app.get('/', (req, res) => {
